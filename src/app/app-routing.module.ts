@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 
-  { path: 'paginas', loadChildren: './paginas/paginas.module#PaginasModule' },
+  { path: 'paginas', loadChildren: () => import('./paginas/paginas.module').then(m => m.PaginasModule) },
   { path: '', redirectTo: '/paginas/dashboard', pathMatch: 'full' }
 
 ];
